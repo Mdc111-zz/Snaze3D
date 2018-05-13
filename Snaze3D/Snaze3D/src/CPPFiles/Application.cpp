@@ -18,10 +18,10 @@ int Height = 800;     // window height (pixels)
 GLbyte  EnableLight = true;
 
 MapBoundary mapBoundary;
+Score score;
 Food food;
 Snake snake;
 FloorGeneration floorGeneration;
-Score score;
 
 
 #pragma region SnakeFoodCollision
@@ -95,12 +95,26 @@ void ChangeDirection(int key, int x, int y) {
 }
 
 #pragma endregion
+#pragma region EndGameText
+void endGameMessage() {
+	char pointScore[35];
 
+	// Print the status of the game on the screen
+	glColor3f(1, 1, 1);
+	glRasterPos2f(0, 14);
+	sprintf_s(pointScore, "To restart the game press 'r'");
+	score.WriteToScreen(pointScore);
+}
+#pragma endregion
 
 void keyboardCallback(unsigned char c, int x, int y) {
 	switch (c) {
 	case 'q':
 		exit(0);
+		break;
+	case 'r':
+		score.points = 0;
+		gameOver = false;
 		break;
 	}
 	glutPostRedisplay();
@@ -143,7 +157,10 @@ void displayCallback()
 		food.DrawFood();
 	}
 	else {
+		endGameMessage();
+		snake.ResetSnake();
 	}
+
 
 	score.UpdateScore();
 	// draw the buffer to the screen

@@ -13,7 +13,8 @@ public:
 	GLbyte  direction = 0;
 	GLint   snakeSize = 0;
 	void DrawSnake();
-	void SaveSnakePosition();
 	bool CheckSelfCollision();
+	void ResetSnake();
+	void SaveSnakePosition();
 };
 #endif

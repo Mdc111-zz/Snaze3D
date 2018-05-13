@@ -30,6 +30,13 @@ void Snake::DrawSnake()
 	}
 }
 
+void Snake::ResetSnake()
+{
+	snakeXPos = 5;
+	snakeYPos = 10;
+	direction = 0;
+	snakeSize = 0;
+}
 void Snake::SaveSnakePosition() {
 	for (int i = 0; i<snakeSize; i++) {// Save the positions of the body parts
 		lastSnakeXPos[0] = lastSnakeXPos[1];
