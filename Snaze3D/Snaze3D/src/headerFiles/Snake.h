@@ -14,5 +14,6 @@ public:
 	GLint   snakeSize = 0;
 	void DrawSnake();
 	void SaveSnakePosition();
+	bool CheckSelfCollision();
 };
 #endif

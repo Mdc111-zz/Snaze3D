@@ -3,6 +3,12 @@
 
 #pragma region Snake
 
+bool Snake::CheckSelfCollision() {
+	for (int i = 0; i<snakeSize; i++)
+		if (snakeBodyPos[0][i] == snakeXPos && snakeBodyPos[1][i] == snakeYPos) return true;
+	return false;
+}
+
 void Snake::DrawSnake()
 {
 	//Drawing the head & the plane

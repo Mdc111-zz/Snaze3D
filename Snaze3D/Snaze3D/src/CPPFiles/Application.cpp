@@ -59,6 +59,8 @@ void MoveSnake(int value) {
 		break;
 	}
 
+	//Checks for Collisoin if yes Game Over
+	if (snake.CheckSelfCollision()) gameOver = true;
 
 	CheckFoodColiision();
 	snake.SaveSnakePosition();
@@ -139,7 +141,6 @@ void displayCallback()
 	}
 	else {
 	}
-
 
 	// draw the buffer to the screen
 	glutPostRedisplay();
