@@ -27,6 +27,9 @@
     <ClCompile Include="src\CPPFiles\Food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\CPPFiles\Score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\headerFiles\FloorGeneration.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\headerFiles\MapBoundary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headerFiles\Score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

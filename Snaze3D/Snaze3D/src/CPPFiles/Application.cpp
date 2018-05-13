@@ -4,6 +4,7 @@
 #include "../headerFiles/FloorGeneration.h"
 #include "../headerFiles/Snake.h"
 #include "../headerFiles/MapBoundary.h"
+#include "../headerFiles//Score.h"
 
 #define UP 1
 #define Down 2
@@ -20,6 +21,7 @@ MapBoundary mapBoundary;
 Food food;
 Snake snake;
 FloorGeneration floorGeneration;
+Score score;
 
 
 #pragma region SnakeFoodCollision
@@ -30,7 +32,8 @@ void CheckFoodColiision() {
 		((snake.snakeXPos <= food.foodXPosition) && (snake.snakeXPos >= food.foodXPosition - 1) && (snake.snakeYPos <= food.foodYPosition) && (snake.snakeYPos >= food.foodYPosition - 1)) ||
 		((snake.snakeXPos <= food.foodXPosition) && (snake.snakeXPos >= food.foodXPosition - 1) && (snake.snakeYPos >= food.foodYPosition) && (snake.snakeYPos <= food.foodYPosition + 1)) ||
 		((snake.snakeXPos >= food.foodXPosition) && (snake.snakeXPos <= food.foodXPosition + 1) && (snake.snakeYPos <= food.foodYPosition) && (snake.snakeYPos >= food.foodYPosition - 1))) {
-		snake.snakeSize++;
+		score.points++;
+		if (score.points < 100) snake.snakeSize++;
 		food.NewFood(mapBoundary.leftBound, mapBoundary.botBound);
 	}
 }
@@ -142,6 +145,7 @@ void displayCallback()
 	else {
 	}
 
+	score.UpdateScore();
 	// draw the buffer to the screen
 	glutPostRedisplay();
 	glutSwapBuffers();
