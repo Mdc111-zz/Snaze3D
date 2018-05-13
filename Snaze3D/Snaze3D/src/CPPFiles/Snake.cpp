@@ -1,4 +1,7 @@
+#include <time.h>
 #include "../headerFiles/Snake.h"
+
+#pragma region Snake
 
 void Snake::DrawSnake()
 {
@@ -20,3 +23,15 @@ void Snake::DrawSnake()
 		glPopMatrix();
 	}
 }
+
+void Snake::SaveSnakePosition() {
+	for (int i = 0; i<snakeSize; i++) {// Save the positions of the body parts
+		lastSnakeXPos[0] = lastSnakeXPos[1];
+		lastSnakeYPos[0] = lastSnakeYPos[1];
+		lastSnakeXPos[1] = snakeBodyPos[0][i];
+		lastSnakeYPos[1] = snakeBodyPos[1][i];
+		snakeBodyPos[0][i] = lastSnakeXPos[0];
+		snakeBodyPos[1][i] = lastSnakeYPos[0];
+	}
+}
+#pragma endregion
