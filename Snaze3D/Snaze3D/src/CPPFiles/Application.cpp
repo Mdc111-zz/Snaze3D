@@ -1,6 +1,6 @@
 #include <glut.h>
 #include "../headerFiles/FloorGeneration.h"
-
+#include "../headerFiles/Snake.h"
 
 GLbyte  gameOver = false; 
 unsigned char camera = 'r';
@@ -9,6 +9,7 @@ int Height = 800;     // window height (pixels)
 GLbyte  EnableLight = true;
 
 FloorGeneration floorGeneration;
+Snake snake;
 
 void keyboardCallback(unsigned char c, int x, int y) {
 	switch (c) {
@@ -50,7 +51,7 @@ void displayCallback()
 		// draw after the opaque objects, since it is translucent
 		floorGeneration.drawFloor();
 		glTranslatef(0, 0.5, 0);
-
+		snake.DrawSnake();
 	}
 	else {
 
