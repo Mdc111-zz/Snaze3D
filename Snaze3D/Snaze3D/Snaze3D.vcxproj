@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClInclude Include="src\headerFiles\FloorGeneration.h" />
     <ClInclude Include="src\headerFiles\Food.h" />
+    <ClInclude Include="src\headerFiles\MapBoundary.h" />
     <ClInclude Include="src\headerFiles\Snake.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
