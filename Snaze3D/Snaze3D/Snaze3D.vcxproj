@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="src\CPPFiles\Application.cpp" />
     <ClCompile Include="src\CPPFiles\FloorGeneration.cpp" />
+    <ClCompile Include="src\CPPFiles\Food.cpp" />
     <ClCompile Include="src\CPPFiles\Snake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\headerFiles\FloorGeneration.h" />
+    <ClInclude Include="src\headerFiles\Food.h" />
     <ClInclude Include="src\headerFiles\Snake.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -24,12 +24,18 @@
     <ClCompile Include="src\CPPFiles\Snake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\CPPFiles\Food.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\headerFiles\FloorGeneration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\headerFiles\Snake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headerFiles\Food.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include <glut.h>
 #include "../headerFiles/FloorGeneration.h"
 #include "../headerFiles/Snake.h"
+#include "../headerFiles/Food.h"
 
 GLbyte  gameOver = false; 
 unsigned char camera = 'r';
@@ -10,6 +11,7 @@ GLbyte  EnableLight = true;
 
 FloorGeneration floorGeneration;
 Snake snake;
+Food food;
 
 void keyboardCallback(unsigned char c, int x, int y) {
 	switch (c) {
@@ -52,6 +54,7 @@ void displayCallback()
 		floorGeneration.drawFloor();
 		glTranslatef(0, 0.5, 0);
 		snake.DrawSnake();
+		food.DrawFood();
 	}
 	else {
 
