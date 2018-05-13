@@ -22,7 +22,19 @@ Snake snake;
 FloorGeneration floorGeneration;
 
 
-
+#pragma region SnakeFoodCollision
+//try without all the different or statement
+void CheckFoodColiision() {
+	if ((snake.snakeXPos == food.foodXPosition && snake.snakeYPos == food.foodYPosition) ||
+		((snake.snakeXPos >= food.foodXPosition) && (snake.snakeXPos <= food.foodXPosition + 1) && (snake.snakeYPos >= food.foodYPosition) && (snake.snakeYPos <= food.foodYPosition + 1)) ||
+		((snake.snakeXPos <= food.foodXPosition) && (snake.snakeXPos >= food.foodXPosition - 1) && (snake.snakeYPos <= food.foodYPosition) && (snake.snakeYPos >= food.foodYPosition - 1)) ||
+		((snake.snakeXPos <= food.foodXPosition) && (snake.snakeXPos >= food.foodXPosition - 1) && (snake.snakeYPos >= food.foodYPosition) && (snake.snakeYPos <= food.foodYPosition + 1)) ||
+		((snake.snakeXPos >= food.foodXPosition) && (snake.snakeXPos <= food.foodXPosition + 1) && (snake.snakeYPos <= food.foodYPosition) && (snake.snakeYPos >= food.foodYPosition - 1))) {
+		snake.snakeSize++;
+		food.NewFood(mapBoundary.leftBound, mapBoundary.botBound);
+	}
+}
+#pragma endregion
 #pragma region SnakeMovement
 void MoveSnake(int value) {
 	snake.lastSnakeXPos[1] = snake.snakeXPos;
@@ -47,6 +59,8 @@ void MoveSnake(int value) {
 		break;
 	}
 
+
+	CheckFoodColiision();
 	snake.SaveSnakePosition();
 
 	//Set the Timer
@@ -124,7 +138,6 @@ void displayCallback()
 		food.DrawFood();
 	}
 	else {
-
 	}
 
 
