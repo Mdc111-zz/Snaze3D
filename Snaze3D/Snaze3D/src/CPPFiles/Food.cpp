@@ -12,4 +12,11 @@ void Food::DrawFood()
 	glutSolidCube(1);
 	glPopMatrix();
 }
+void Food::NewFood(int leftBound, int botBound) {
+	time_t seconds;
+	time(&seconds);
+	srand((unsigned int)seconds);
+	foodXPosition = rand() % 30 + leftBound;
+	foodYPosition = rand() % 30 + botBound;
+}
 #pragma endregion
