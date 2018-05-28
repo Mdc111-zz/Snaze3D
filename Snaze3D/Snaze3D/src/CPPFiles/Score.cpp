@@ -18,3 +18,15 @@ void Score::UpdateScore() {
 	WriteToScreen(pointScore);
 }
 #pragma endregion
+/*
+#pragma region EndGameText
+void endGameMessage() {
+	char pointScore[35];
+
+	// Print the status of the game on the screen
+	glColor3f(1, 1, 1);
+	glRasterPos2f(0, 14);
+	sprintf_s(pointScore, "To restart the game press 'r'");
+	score.WriteToScreen(pointScore);
+}
+#pragma endregion*/
